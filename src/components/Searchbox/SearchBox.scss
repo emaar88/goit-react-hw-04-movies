@@ -1,0 +1,19 @@
+.searchButton {
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  transition: 1s all;
+  border-radius: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.input_style {
+  display: inline-block;
+  width: 250px;
+  height: 30px;
+  margin-right: 20px;
+}

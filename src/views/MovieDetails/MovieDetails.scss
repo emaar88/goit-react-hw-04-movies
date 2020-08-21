@@ -1,0 +1,45 @@
+.goBack {
+  margin-bottom: 20px;
+  padding: 20px 40px;
+  background-color: white;
+  color: red;
+  transition: 1s all;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
+.containerShow {
+  max-width: 1000px;
+  padding: 20px 50px;
+}
+
+.container_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desc_div {
+  margin-left: 15px;
+}
+
+.genres {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.genres p:not(:last-child) {
+  margin-right: 10px;
+}
+
+.additional_info_links {
+  padding: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
