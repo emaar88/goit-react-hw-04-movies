@@ -49,7 +49,11 @@ export default class MovieDetails extends Component {
                 />
               </div>
               <div className="desc_div">
-                <h1>{movie.original_title}</h1>
+                <h1 className="header_movie">
+                  <div>{movie.original_title}</div>
+                  <div>{movie.release_date.substring(4, 0)}</div>
+                </h1>
+                <p>{`User score ${movie.vote_average * 10}%`}</p>
 
                 <h2>Overview</h2>
                 <p>{movie.overview}</p>
