@@ -3,34 +3,34 @@ import moviesAPI from "../../services/tv-api";
 import Loader from "../../components/Loader";
 
 export default class Reviews extends Component {
-  state = { review: null, loading: false };
+  state = { review: null, loading: false, error: null };
 
   componentDidMount() {
     this.setState({ loading: true });
     moviesAPI
       .movieReviews(this.props.match.params.movieId)
       .then((review) => this.setState({ review }))
+      .catch((error) => this.setState({ error }))
       .finally(() => this.setState({ loading: false }));
   }
 
   render() {
-    const { review, loading } = this.state;
+    const { review, loading, error } = this.state;
     const { match } = this.props;
     return (
       <div>
+        {error && <p>We don`t have reviews list</p>}
         {loading && <Loader />}
-        <ul>
-          {review !== null ? (
-            review.map((rev) => (
+        {review.length > 0 && (
+          <ul>
+            {review.map((rev) => (
               <li key={rev.id}>
                 <h4>{rev.author}</h4>
                 <p>{rev.content}</p>
               </li>
-            ))
-          ) : (
-            <p>We don`t have casts list</p>
-          )}
-        </ul>
+            ))}
+          </ul>
+        )}
       </div>
     );
   }
