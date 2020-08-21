@@ -1,10 +1,6 @@
 import React, { lazy, Suspense } from "react";
-import { Switch, Route, Redirect, NavLink } from "react-router-dom";
-// import Home from "./../../views/Home";
-// import Movies from "./../../views/Movies";
-// import MovieDetails from "./../../views/MovieDetails";
+import { Switch, Route } from "react-router-dom";
 import NotFound from "./../../views/NotFound";
-import Navigation from "./../Navigation/Navigation";
 import Layout from "./../Layout/Layout";
 import routes from "./../../views/routes";
 
@@ -20,10 +16,7 @@ const App = () => (
       <Switch>
         <Route path={routes.home} exact component={Home} />
         <Route path={routes.movies} exact component={Movies} />
-        {/* <Route path={routes.cast} component={Cast} />
-        <Route path={routes.cast} component={Reviews} /> */}
         <Route path={routes.movieDetails} component={MovieDetails} />
-        {/* <Redirect to="/" /> */}
         <Route component={NotFound} />
       </Switch>
     </Suspense>

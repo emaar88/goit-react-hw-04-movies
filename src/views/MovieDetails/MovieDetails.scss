@@ -19,8 +19,14 @@
 }
 
 .container_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -29,13 +35,18 @@
 }
 
 .genres {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
-}
-
-.genres p:not(:last-child) {
-  margin-right: 10px;
+  p:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 .additional_info_links {
@@ -54,7 +65,7 @@
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  &:first-child {
+  div:not(:last-child) {
     margin-right: 15px;
   }
 }

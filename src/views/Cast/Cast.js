@@ -16,7 +16,6 @@ export default class Cast extends Component {
 
   render() {
     const { casts, loading } = this.state;
-    const { match } = this.props;
     return (
       <div>
         {loading && <Loader />}
