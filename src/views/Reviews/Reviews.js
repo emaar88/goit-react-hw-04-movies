@@ -3,7 +3,7 @@ import moviesAPI from "../../services/tv-api";
 import Loader from "../../components/Loader";
 
 export default class Reviews extends Component {
-  state = { review: null, loading: false, error: null };
+  state = { review: "", loading: false, error: null };
 
   componentDidMount() {
     this.setState({ loading: true });
