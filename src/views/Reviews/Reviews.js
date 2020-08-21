@@ -13,6 +13,18 @@ export default class Reviews extends Component {
       .catch((error) => this.setState({ error }))
       .finally(() => this.setState({ loading: false }));
   }
+  // async componentDidMount() {
+  //   try {
+  //     this.setState({ loading: true });
+  //     moviesAPI
+  //       .movieReviews(this.props.match.params.movieId)
+  //       .then((review) => this.setState({ review }));
+  //   } catch (e) {
+  //     moviesAPI.movieReviews((error) => this.setState({ error }));
+  //   } finally {
+  //     moviesAPI.movieReviews(() => this.setState({ loading: false }));
+  //   }
+  // }
 
   render() {
     const { review, loading, error } = this.state;
@@ -21,7 +33,7 @@ export default class Reviews extends Component {
       <div>
         {error && <p>We don`t have reviews list</p>}
         {loading && <Loader />}
-        {review.length > 0 && (
+        {review.length > 0 ? (
           <ul>
             {review.map((rev) => (
               <li key={rev.id}>
@@ -30,6 +42,8 @@ export default class Reviews extends Component {
               </li>
             ))}
           </ul>
+        ) : (
+          <p>We don`t have reviews list</p>
         )}
       </div>
     );
